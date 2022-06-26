@@ -647,8 +647,8 @@ function draw() {
   freq1 = int(pitchNoX);
   freq2 = int(pitchNoY);
   
-  freq1 = constrain(map(mouseX, 0, width, 100, 500), 100, 500);
-  volumme = constrain(map(mouseY, height, 0, 0, 1), 0, 1);
+  //freq1 = constrain(map(mouseX, 0, width, 100, 500), 100, 500);
+  //volumme = constrain(map(mouseY, height, 0, 0, 1), 0, 1);
  
   note1sin.freq(freq1,0.1);
   note1sin.amp(volume, 0.1);
