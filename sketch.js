@@ -18,6 +18,7 @@ let maskImage;
 let volumeLevel=0.0;
 let xcontrolarea;
 let ycontrolarea;
+
 var letters= " ";
 var i=0.0;
 
@@ -216,7 +217,7 @@ function setup() {
   note2vibrate.start();
   note1sin.start();
   note2sin.start();
-  
+  playing = true;
 }
 
 
@@ -645,15 +646,15 @@ function draw() {
  
   note1sin.freq(freq1,0.1);
   note1sin.amp(volume, 0.1);
-  note1vibrate.freq(freq1+5,0.1);
   
   note2sin.freq(freq2,0.1);
   note2sin.amp(volume, 0.1);
-  note2vibrate.freq(freq2+5,0.1);
  
   if(vibrato)
   {
+    note1vibrate.freq(freq1+5,0.1);
     note1vibrate.amp(volume/3, 0.1);//volume/3); 
+    note2vibrate.freq(freq2+5,0.1);
     note2vibrate.amp(volume/3, 0.1);// volume/3); 
   }
   else
