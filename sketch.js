@@ -633,7 +633,7 @@ function draw() {
     fill(225,70,105);
   }
   
-  sphere(boxSize / 25);
+  sphere(boxSize / 2);//25);
   pop();
   
 
