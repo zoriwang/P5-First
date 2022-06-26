@@ -192,8 +192,8 @@ function setup() {
   //fullscreen();
   //let cnv = createCanvas(100, 100);
   let cnv = createCanvas(windowWidth*1.0, windowHeight*1.0,WEBGL);
-  //cnv.mousePressed(playOscillator);
-  //cnv.mouseOver(playOscillator);
+  cnv.mousePressed(playOscillator);
+  cnv.mouseOver(playOscillator);
   osc = new p5.Oscillator('sine');
   
   //noStroke();
@@ -308,7 +308,11 @@ function playOscillator() {
 
 function mouseReleased() {
   // ramp amplitude to 0 over 0.5 seconds
-  osc.amp(0, 0.5);
+  note1vibrate.amp(0, 0.5);
+  note2vibrate.amp(0, 0.5);
+  note1sin.amp(0, 0.5);
+  note2sin.amp(0, 0.5);
+  //osc.amp(0, 0.5);
   playing = false;
 }
 
@@ -633,7 +637,7 @@ function draw() {
     fill(225,70,105);
   }
   
-  sphere(boxSize / 2);//25);
+  sphere(boxSize / 25);
   pop();
   
 
