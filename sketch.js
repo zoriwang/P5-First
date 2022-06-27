@@ -207,7 +207,7 @@ function setup() {
   volStep = boxSize / 10;
 
   // This ratio is to turn the hard numbers in Zori's orig codes to right numbers (using box size as the anchor - Zori's box size is 700);
-  zoriRatio = zoriRatio;
+  zoriRatio = boxSize/700;
   
   cnv.mousePressed(playOscillator);
   cnv.mouseOver(playOscillator);
