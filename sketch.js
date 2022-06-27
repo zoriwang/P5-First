@@ -1,4 +1,15 @@
 //import processing.sound.*;
+
+let boxSize;
+let controlSize;
+let controlLeft;
+let controlTop;
+let boxLeft;
+let volStep;
+
+// This ratio is to turn the hard numbers in Zori's orig codes to right numbers (using box size as the anchor - Zori's box size is 700);
+let zoriRatio;
+
 var pitchnote1 = 0.0; 
 var pitchnote2 = 0.0; 
 var vibrato1 = 0.0; 
@@ -177,17 +188,16 @@ function preload() {
     loadFont('ProcessingSansPro-Semibold.ttf');
 }
 
-let boxSize;
-let boxLeft;
-let controlSize;
-let controlLeft;
-let controlTop;
-let volStep;
 
 function setup() {
   
  
   background(16,16,22);
+  
+  //fullScreen(P3D);
+  //fullscreen();
+  //let cnv = createCanvas(100, 100);
+  let cnv = createCanvas(windowWidth*1.0, windowHeight*1.0,WEBGL);
   
   boxSize = windowHeight/2;
   controlSize = 2.1*boxSize;
@@ -195,11 +205,10 @@ function setup() {
   controlTop =-controlSize/5*2;
   boxLeft = boxSize/10*3;
   volStep = boxSize / 10;
+
+  // This ratio is to turn the hard numbers in Zori's orig codes to right numbers (using box size as the anchor - Zori's box size is 700);
+  zoriRatio = zoriRatio;
   
-  //fullScreen(P3D);
-  //fullscreen();
-  //let cnv = createCanvas(100, 100);
-  let cnv = createCanvas(windowWidth*1.0, windowHeight*1.0,WEBGL);
   cnv.mousePressed(playOscillator);
   cnv.mouseOver(playOscillator);
   //osc = new p5.Oscillator('sine');
@@ -499,9 +508,13 @@ function draw() {
   translate(0,0,ballRad);
   
   //fill(250+volumeLevel/1.5,80-volumeLevel/2.5,135-volumeLevel);
-  let R =(250-volumeLevel/1.5)*boxSize/700;
-  let G = (80+volumeLevel/2.5)*boxSize/700;
-  let B = (135+volumeLevel)*boxSize/700;
+
+ 
+  let R = 250*zoriRatio-volumeLevel/1.5;
+  let G = 80*zoriRatio +volumeLevel/2.5;
+  let B = 135*zoriRatio+volumeLevel;
+   
+  
   fill(R,G,B);
   noStroke();
   ellipse(xhz,yhz,ballRad,ballRad);
@@ -591,8 +604,8 @@ function draw() {
    push(); //push the whole box group
   
   
-   //stroke(225*boxSize/700-2.5*volumeLevel,70*boxSize/700-volumeLevel/9,105*boxSize/700+2*volumeLevel,150*boxSize/700);    
-   stroke(225*boxSize/700+2.5*volumeLevel,70*boxSize/700+volumeLevel/9,105*boxSize/700-2*volumeLevel,150*boxSize/700);    
+   //stroke(225*zoriRatio-2.5*volumeLevel,70*zoriRatio-volumeLevel/9,105*zoriRatio+2*volumeLevel,150*zoriRatio);    
+   stroke(225*zoriRatio+2.5*volumeLevel,70*zoriRatio+volumeLevel/9,105*zoriRatio-2*volumeLevel,150*zoriRatio);    
    //myTranslate(-800,490,0,xr);
    //the box translate:
   //myTranslate(450,-300,0,xr);
