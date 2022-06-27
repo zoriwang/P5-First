@@ -188,7 +188,7 @@ function setup() {
  
   background(16,16,22);
   
-  boxSize = windowHeight/2;
+  boxSize = windowHeight/3;
   controlSize = 2.1*boxSize;
   controlLeft  = -controlSize;
   controlTop =-controlSize/5*2;
