@@ -144,7 +144,7 @@ let pitchTab = [
 ["233","A#/B♭"],
 ["246","B3"], 
 ["262","C4"], 
-["277" ,"C#/D♭"],         
+["277" ,"C#/D♭"], 
 ["294","D4"], 
 ["310","D#/E♭"],
 ["329","E4"],
@@ -531,11 +531,11 @@ function draw() {
   text(pitchY[1],controlLeft + controlSize + 10,yhz+10);    
 //--------------------------------------------Drawing the manual------------------------------------------------------
 
- text("INSTRUCTION",controlLeft,controlTop - windowHeight/50*5);    
- text("1. Left-click in the Window to gain focus.",controlLeft,controlTop - windowHeight/50*4);    
- text("2. Use up/down arrows keys to adjust the volume.",controlLeft,controlTop - windowHeight/50*3);    
- text("3. Move the mouse around to change pitches.",controlLeft,controlTop - windowHeight/50*2);    
- text("4. Use left/right arrows keys to turn vibrato on/off.",controlLeft,controlTop - windowHeight/50*1);   
+ text("INSTRUCTION",controlLeft,controlTop - windowHeight/50*6);    
+ text("1. Left-click in the Window to gain focus.",controlLeft,controlTop - windowHeight/50*5);    
+ text("2. Use up/down arrows keys to adjust the volume.",controlLeft,controlTop - windowHeight/50*4);    
+ text("3. Move the mouse around to change pitches.",controlLeft,controlTop - windowHeight/50*3);    
+ text("4. Use left/right arrows keys to turn vibrato on/off.",controlLeft,controlTop - windowHeight/50*2);   
 
 //--------------------------------------------Drawing the volumeLevel bar------------------------------------------------------
   let rd = int(boxSize /5);
