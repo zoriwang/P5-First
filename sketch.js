@@ -590,15 +590,13 @@ function draw() {
  
    push(); //push the whole box group
   
-   if (volumeLevel>0)
-   {
-   stroke(225,70,105,150);
-    
-   }
+  
+   //stroke(225*boxSize/700-2.5*volumeLevel,70*boxSize/700-volumeLevel/9,105*boxSize/700+2*volumeLevel,150*boxSize/700);    
+   stroke(225*boxSize/700+2.5*volumeLevel,70*boxSize/700+volumeLevel/9,105*boxSize/700-2*volumeLevel,150*boxSize/700);    
    //myTranslate(-800,490,0,xr);
    //the box translate:
   //myTranslate(450,-300,0,xr);
-  stroke(225,70,105,150);
+  //stroke(225,70,105,150);
   
   translate(boxSize,0,0);
   rotateX(-PI/6);
