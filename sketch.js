@@ -531,11 +531,11 @@ function draw() {
   text(pitchY[1],controlLeft + controlSize + 10,yhz+10);    
 //--------------------------------------------Drawing the manual------------------------------------------------------
 
- text("INSTRUCTION",,controlTop - windowHeight/50*5);    
+ text("INSTRUCTION",controlLeft,controlTop - windowHeight/50*5);    
  text("1. Left-click in the Window to gain focus.",controlLeft,controlTop - windowHeight/50*4);    
- text("2. Use up/down arrows keys to adjust the volume.",controlLeft,controlTop - windowHeight/50*2);    
-//  text("3. Move the mouse around to change pitches.",0,controlTop controlSize +  windowHeight/50*3);    
- // text("4. Use left/right arrows keys to turn vibrato on/off.",0,controlTop+controlSize +  windowHeight/50*4);   
+ text("2. Use up/down arrows keys to adjust the volume.",controlLeft,controlTop - windowHeight/50*3);    
+ text("3. Move the mouse around to change pitches.",controlLeft,controlTop - windowHeight/50*2);    
+ text("4. Use left/right arrows keys to turn vibrato on/off.",controlLeft,controlTop - windowHeight/50*1);   
 
 //--------------------------------------------Drawing the volumeLevel bar------------------------------------------------------
   let rd = int(boxSize /5);
