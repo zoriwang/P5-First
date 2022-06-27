@@ -194,7 +194,7 @@ function setup() {
   let cnv = createCanvas(windowWidth*1.0, windowHeight*1.0,WEBGL);
   cnv.mousePressed(playOscillator);
   cnv.mouseOver(playOscillator);
-  osc = new p5.Oscillator('sine');
+  //osc = new p5.Oscillator('sine');
   
   //noStroke();
 
@@ -298,7 +298,7 @@ function playOscillator() {
   // starting an oscillator on a user gesture will enable audio
   // in browsers that have a strict autoplay policy.
   // See also: userStartAudio();
-  osc.start();
+  //osc.start();
   note1sin.start();
   note2sin.start();
   note1vibrate.start();
