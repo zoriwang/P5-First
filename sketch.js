@@ -19,6 +19,8 @@ let volumeLevel=0.0;
 let xcontrolarea;
 let ycontrolarea;
 
+let leftBtnClicked = false;
+
 var letters= " ";
 var i=0.0;
 
@@ -177,6 +179,8 @@ function preload() {
 
 let boxSize;
 let controlSize;
+let controlLeft;
+let controlTop;
 let volStep;
 
 function setup() {
@@ -184,8 +188,10 @@ function setup() {
  
   background(16,16,22);
   
-  boxSize = windowHeight/3;
+  boxSize = windowHeight/2.5;
   controlSize = 2.1*boxSize;
+  controlLeft  = -controlSize;
+  controlTop =-controlSize/5*2;
   volStep = boxSize / 10;
   
   //fullScreen(P3D);
@@ -419,8 +425,7 @@ function draw() {
    stroke(250,110);
    strokeWeight(3);
    noFill();
-   let controlLeft  = -controlSize;
-   let controlTop =-controlSize/5*2;
+
    rect(controlLeft,controlTop,controlSize,controlSize,10);
 
 //----------------------------------------------the GRIDS in control area--------------------------------------------------
@@ -524,7 +529,13 @@ function draw() {
   // pitch name (if has)
   text(pitchX[1],xhz,controlTop - controlSize/40);
   text(pitchY[1],controlLeft + controlSize + 10,yhz+10);    
-
+//--------------------------------------------Drawing the manual------------------------------------------------------
+  text("INSTRUCTION",0,controlTop + controlSize + 25);    
+  text("1. Left-click in the Window to gain focus.",0,controlTop controlSize + windowHeight/50);    
+  text("2. Use up/down arrows keys to adjust the volume.",0,controlTop controlSize +  windowHeight/50*2);    
+  text("3. Move the mouse around to change pitches.",0,controlTop controlSize +  windowHeight/50*3);    
+  text("4. Use left/right arrows keys to turn vibrato on/off.",0,controlTop controlSize +  windowHeight/50*3);   
+ 
 //--------------------------------------------Drawing the volumeLevel bar------------------------------------------------------
   let rd = int(boxSize /5);
   stroke(36,36,42);
