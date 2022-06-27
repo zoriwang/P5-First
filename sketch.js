@@ -531,7 +531,7 @@ function draw() {
   text(pitchY[1],controlLeft + controlSize + 10,yhz+10);    
 //--------------------------------------------Drawing the manual------------------------------------------------------
 
- //text("INSTRUCTION",0,controlTop + controlSize + 25);    
+ text("INSTRUCTION",0,controlTop - windowHeight/50);    
  // text("1. Left-click in the Window to gain focus.",0,controlTop+controlSize + windowHeight/50);    
  // text("2. Use up/down arrows keys to adjust the volume.",0,controlTop+controlSize +  windowHeight/50*2);    
 //  text("3. Move the mouse around to change pitches.",0,controlTop controlSize +  windowHeight/50*3);    
