@@ -415,6 +415,7 @@ function rr(x1, y1, x2, y2, tl, tr, br, bl){
     }
   endShape(CLOSE);
 }
+
 function draw() {
 
   //console.log(windowWidth);
@@ -433,6 +434,9 @@ function draw() {
    let opaque=35-w;
    let weight=1;   
     stroke(50,50,50,opaque);strokeWeight(weight);
+  
+  if(volumeLevel <= 0.0)
+    volumeLevel = 0.0;
   
   let lowest = int(gridTab[0]);
   let highest = int(gridTab[gridTab.length-1]);
