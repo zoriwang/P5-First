@@ -178,6 +178,7 @@ function preload() {
 }
 
 let boxSize;
+let boxLeft;
 let controlSize;
 let controlLeft;
 let controlTop;
@@ -192,6 +193,7 @@ function setup() {
   controlSize = 2.1*boxSize;
   controlLeft  = -controlSize;
   controlTop =-controlSize/5*2;
+  boxLeft = boxSize/10*3;
   volStep = boxSize / 10;
   
   //fullScreen(P3D);
@@ -422,6 +424,9 @@ function draw() {
   //console.log(windowHeight);
    background(16,16,22);
   
+  // Adjust the whole layout:
+  translate(boxSize / 4,0,0);
+  
    //--------------------------------------------area for mouse control-------------------------------------------------
    stroke(250,110);
    strokeWeight(3);
@@ -545,7 +550,7 @@ function draw() {
   let rd = int(boxSize /5);
   stroke(36,36,42);
   fill('rgba(36,36,42, 0.25)');
-  roundRect(boxSize/10*3, boxSize+boxSize/10, boxSize*1.4, boxSize/6, rd,rd,rd,rd);
+  roundRect(boxLeft, boxSize+boxSize/10, boxSize*1.4, boxSize/6, rd,rd,rd,rd);
   
   // the moving bar:
   //sourceImage.fill(250+y/1.5,80-y/2.5,135-y,180);
