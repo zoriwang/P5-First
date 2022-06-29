@@ -515,12 +515,12 @@ function draw() {
   let B = 135*zoriRatio+volumeLevel;
    
   
-  fill(R,G,B);
+  fill(R,G,B,180);
   noStroke();
   ellipse(xhz,yhz,ballRad,ballRad);
  
   //stroke(250+volumeLevel/1.5,80-volumeLevel/2.5,135-volumeLevel,180);
-  stroke(R,G,B,180);
+  stroke(R,G,B);
   strokeWeight(2);
   
   line(controlLeft,yhz,controlLeft+controlSize,yhz);
@@ -553,11 +553,12 @@ function draw() {
   text(pitchY[1],controlLeft + controlSize + 10,yhz+10);    
 //--------------------------------------------Drawing the manual------------------------------------------------------
 
- text("INSTRUCTIONS",controlLeft,controlTop - windowHeight/40*7);    
- text("1. Left-click in the window to gain focus.",controlLeft,controlTop - windowHeight/40*6);    
- text("2. Use up/down arrows keys to adjust the volume.",controlLeft,controlTop - windowHeight/40*5);    
- text("3. Move the mouse around to change pitches.",controlLeft,controlTop - windowHeight/40*4);    
- text("4. Use left/right arrows keys to turn vibrato on/off.",controlLeft,controlTop - windowHeight/40*3);   
+ text("INSTRUCTIONS",controlLeft,controlTop - windowHeight/30*8.4);    
+ text("1. Left-click in the window to gain focus.",controlLeft,controlTop - windowHeight/30*7);    
+ text("2. Use up/down arrows keys to adjust the volume.",controlLeft,controlTop - windowHeight/30*6);    
+ text("3. Move the mouse around to change pitches.",controlLeft,controlTop - windowHeight/30*5);    
+ text("4. Use left/right arrows keys to turn vibrato on/off.",controlLeft,controlTop - windowHeight/30*4);   
+ text("5. Press on shift to hold note.",controlLeft,controlTop - windowHeight/30*3);   
 
 //--------------------------------------------Drawing the volumeLevel bar------------------------------------------------------
   let rd = int(boxSize /5);
@@ -567,7 +568,7 @@ function draw() {
   
   // the moving bar:
   //sourceImage.fill(250+y/1.5,80-y/2.5,135-y,180);
-  fill(R,G,B,180);
+  fill(R,G,B);
   //dont' make the bar too slim:
   let volBarW0 = boxSize*1.4/8;
   push();
@@ -582,7 +583,7 @@ function draw() {
   text("− volumeLevel +",boxSize/10*8,boxSize-boxSize/20+boxSize/10);
 
 //-----------------------------------------------DISPLAYING "HOLD" WHEN SHIFT IS PRESSED----------------------------------
-    if(shiftKeyPressed)
+  if(shiftKeyPressed)
    {
      text("HOLD ",boxSize/10*3+boxSize*1.2, boxSize+boxSize/6 + boxSize/10+boxSize/10);
    }
@@ -682,23 +683,26 @@ function draw() {
   //freq1 = constrain(map(mouseX, 0, width, 100, 500), 100, 500);
   //volumme = constrain(map(mouseY, height, 0, 0, 1), 0, 1);
  
-  note1sin.freq(freq1,0.1);
-  note1sin.amp(volume, 0.1);
+  if(!shiftKeyPressed)
+  {
+    note1sin.freq(freq1,0.1);
+    note1sin.amp(volume, 0.1);
   
-  note2sin.freq(freq2,0.1);
-  note2sin.amp(volume, 0.1);
+    note2sin.freq(freq2,0.1);
+    note2sin.amp(volume, 0.1);
  
-  if(vibrato)
-  {
-    note1vibrate.freq(freq1+5,0.1);
-    note1vibrate.amp(volume/3, 0.1);//volume/3); 
-    note2vibrate.freq(freq2+5,0.1);
-    note2vibrate.amp(volume/3, 0.1);// volume/3); 
-  }
-  else
-  {
-    note1vibrate.amp(0,0.1); 
-    note2vibrate.amp(0,0.1); 
+    if(vibrato)
+    {
+      note1vibrate.freq(freq1+5,0.1);
+      note1vibrate.amp(volume/3, 0.1);//volume/3); 
+      note2vibrate.freq(freq2+5,0.1);
+      note2vibrate.amp(volume/3, 0.1);// volume/3); 
+    }
+    else
+    {
+      note1vibrate.amp(0,0.1); 
+      note2vibrate.amp(0,0.1); 
+    }
   }
   
   return;
