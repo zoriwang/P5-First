@@ -434,7 +434,7 @@ function draw() {
    background(16,16,22);
   
   // Adjust the whole layout:
-  translate(boxSize / 4,0,0);
+  translate(boxSize / 4, -windowHeight/20,0);
   
    //--------------------------------------------area for mouse control-------------------------------------------------
    stroke(250,110);
