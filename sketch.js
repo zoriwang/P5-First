@@ -554,11 +554,11 @@ function draw() {
 //--------------------------------------------Drawing the manual------------------------------------------------------
 
  text("INSTRUCTIONS",controlLeft,controlTop - windowHeight/30*8.4);    
- text("1. Left-click in the window to gain focus.",controlLeft,controlTop - windowHeight/30*7);    
- text("2. Use up/down arrows keys to adjust the volume.",controlLeft,controlTop - windowHeight/30*6);    
+ text("1. Left click the window to start.",controlLeft,controlTop - windowHeight/30*7);    
+ text("2. Use up/down keys to adjust the volume.",controlLeft,controlTop - windowHeight/30*6);    
  text("3. Move the mouse around to change pitches.",controlLeft,controlTop - windowHeight/30*5);    
- text("4. Use left/right arrows keys to turn vibrato on/off.",controlLeft,controlTop - windowHeight/30*4);   
- text("5. Press on shift to hold note.",controlLeft,controlTop - windowHeight/30*3);   
+ text("4. Use left/right keys to turn vibrato on/off.",controlLeft,controlTop - windowHeight/30*4);   
+ text("5. Press on Shift to hold the pitch.",controlLeft,controlTop - windowHeight/30*3);   
 
 //--------------------------------------------Drawing the volumeLevel bar------------------------------------------------------
   let rd = int(boxSize /5);
