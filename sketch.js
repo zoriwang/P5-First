@@ -469,7 +469,7 @@ function draw() {
   //line(xhz, controlTop,xhz,controlTop+controlSize);
 //---------------------------------------------line indicators in control area-------------------------------------------------
 
-  let xhz = mouseX*2 - windowWidth - (windowWidth - controlSize);
+  let xhz = mouseX*2 - windowWidth;// - (windowWidth - controlSize);
   let yhz = mouseY*2 - windowHeight; 
   
 
